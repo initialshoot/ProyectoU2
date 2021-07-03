@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Eliminar Contacto
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div>
+        <ion-card class="dete" *ngFor="let usuario of usuService.usuarios">
+            <ion-card-header>
+                <h3>{{usuario.telefono}}</h3>
+                <ion-card-title>{{usuario.nombre}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <h2>{{usuario.email}}</h2>
+                <h2>{{usuario.notas}}</h2>
+                <ion-button class="boton" color="danger" (click)="deleteAlertConfirm(borrar)">X</ion-button>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+
+</ion-content>

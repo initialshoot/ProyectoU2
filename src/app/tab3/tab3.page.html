@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Mis Contactos
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-card>
+        <ion-card-header>
+            <p class="observar">Notas</p>
+            <br>
+            <ion-toggle [(ngModel)]="valor"></ion-toggle>
+        </ion-card-header>
+    </ion-card>
+
+    <div>
+        <ion-card *ngFor="let usuario of usuService.usuarios">
+            <ion-card-header>
+                <h3>{{usuario.telefono}}</h3>
+                <ion-card-title class="campos">{{usuario.nombre}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <h2>{{usuario.email}}</h2>
+                <h2 *ngIf="valor === true">{{usuario.notas}}</h2>
+
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+</ion-content>

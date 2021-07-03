@@ -1,0 +1,42 @@
+<ion-header color="danger" [translucent]="true">
+    <ion-toolbar class="hed">
+        <ion-title>
+            Lista de Contactos
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+        <ion-toolbar class="hed">
+            <ion-title size="large">Lista de contactos</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <br>
+    <div class="class">
+        <ion-item>
+            <ion-label position="floating">Nombre Completo</ion-label>
+            <ion-input [(ngModel)]="usuService.usuario.nombre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input [(ngModel)]=usuService.usuario.telefono></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input [(ngModel)]="usuService.usuario.email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Notas</ion-label>
+            <ion-input [(ngModel)]="usuService.usuario.notas"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button color="secondary" (click)="usuService.adir()" (click)="agregar()" class="btn">
+            <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button><br>
+        <h2 *ngIf="persona == false">No se han añadido contactos</h2>
+    </div>
+</ion-content>
